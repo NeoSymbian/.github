@@ -17,11 +17,13 @@ The first target is the **Google Pixel 3a XL**:
   the system tick and timers, and exception traps.
 - ✅ User mode on the phone: 32-bit ARM Symbian code runs on the 64-bit kernel and makes system calls. The kernel
   emulates the old instructions ARMv8 dropped (SWP, misaligned LDRD/LDM).
+- ✅ The real 2010 user side boots on the phone: the file server and estart with a RAM drive as C:, and the Rust
+  test programs pass there (heap, timers, async, threads, semaphores, files).
 - ✅ Rust runs on the 2010 Symbian user side (QEMU Syborg): EXEs written in Rust only, making kernel exec calls
   directly, with a heap, timers, async, threads and a Rust client for the file server
   ([e32-rs](https://github.com/NeoSymbian/e32-rs)).
 - ✅ A Rust launcher UI renders through Slint's software renderer ([neoui](https://github.com/NeoSymbian/neoui)).
-- ⏳ Next: the real 2010 Symbian user side (euser, file server, a shell) on the phone; on the Rust side, an IPC
+- ⏳ Next: a Symbian shell on the phone screen; on the Rust side, an IPC
   server and the UI on Syborg.
 
 Follow along in the [roadmap](https://github.com/NeoSymbian/symbian-pixel/blob/main/docs/roadmap.md).
