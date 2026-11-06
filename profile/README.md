@@ -15,11 +15,13 @@ The first target is the **Google Pixel 3a XL**:
 - ✅ The standalone nanokernel test suite (nkernsa) completes on the phone, with results drawn on its screen.
 - ✅ The full EKA2 kernel (flexible memory model) boots on QEMU and on the phone, on all 8 cores: kernel threads,
   the system tick and timers, and exception traps.
+- ✅ User mode on the phone: 32-bit ARM Symbian code runs on the 64-bit kernel and makes system calls. The kernel
+  emulates the old instructions ARMv8 dropped (SWP, misaligned LDRD/LDM).
 - ✅ Rust runs on the 2010 Symbian user side (QEMU Syborg): EXEs written in Rust only, making kernel exec calls
   directly, with a heap, timers, async, threads and a Rust client for the file server
   ([e32-rs](https://github.com/NeoSymbian/e32-rs)).
 - ✅ A Rust launcher UI renders through Slint's software renderer ([neoui](https://github.com/NeoSymbian/neoui)).
-- ⏳ Next: user mode (the 32-bit Symbian user side on the 64-bit kernel), then a Symbian shell on the phone; on the Rust side, an IPC
+- ⏳ Next: the real 2010 Symbian user side (euser, file server, a shell) on the phone; on the Rust side, an IPC
   server and the UI on Syborg.
 
 Follow along in the [roadmap](https://github.com/NeoSymbian/symbian-pixel/blob/main/docs/roadmap.md).
