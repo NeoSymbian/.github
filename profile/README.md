@@ -25,7 +25,9 @@ The first target is the **Google Pixel 3a XL**:
 - ✅ IPC servers in Rust: a Rust server process serves an unmodified C++ Symbian client (`RSessionBase`) and Rust
   clients, the groundwork for the Rust UI server.
 - ✅ A Rust launcher UI renders through Slint's software renderer ([neoui](https://github.com/NeoSymbian/neoui)).
-- ⏳ Next: a Symbian shell on the phone screen; on the Rust side, the UI on Syborg.
+- ✅ The Rust launcher **replaces the window server** on the 2010 Symbian user side (QEMU Syborg): it draws straight
+  to the frame buffer and takes raw touch and key events from the kernel; tapping Phone opens the Phone screen.
+- ⏳ Next: a Symbian shell on the phone screen; on the Rust side, apps as separate processes (R6).
 
 Follow along in the [roadmap](https://github.com/NeoSymbian/symbian-pixel/blob/main/docs/roadmap.md).
 
