@@ -28,7 +28,10 @@ The first target is the **Google Pixel 3a XL**:
 - ✅ A Rust launcher UI renders through Slint's software renderer ([neoui](https://github.com/NeoSymbian/neoui)).
 - ✅ The Rust launcher **replaces the window server** on the 2010 Symbian user side (QEMU Syborg): it draws straight
   to the frame buffer and takes raw touch and key events from the kernel; tapping Phone opens the Phone screen.
-- ⏳ Next: input on the phone (touch, keys), then the Rust UI on the phone; on the Rust side, apps as separate processes (R6).
+- ✅ Apps run as **separate Symbian processes** under the Rust UI server (QEMU Syborg): a live Clock app draws into
+  a shared surface, gets touches, and exits on Back.
+- ⏳ Next: input on the phone (touch, keys), then the Rust UI on the phone; on the Rust side, a terminal for the old
+  text programs (R6b).
 
 Follow along in the [roadmap](https://github.com/NeoSymbian/symbian-pixel/blob/main/docs/roadmap.md).
 
