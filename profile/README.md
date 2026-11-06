@@ -16,10 +16,11 @@ The first target is the **Google Pixel 3a XL**:
 - ✅ The full EKA2 kernel (flexible memory model) boots on QEMU and on the phone, on one core so far: kernel threads,
   the system tick and timers, and exception traps.
 - ✅ Rust runs on the 2010 Symbian user side (QEMU Syborg): EXEs written in Rust only, making kernel exec calls
-  directly, with exit codes and panics ([e32-rs](https://github.com/NeoSymbian/e32-rs)).
+  directly, with a heap, timers, async, threads and a Rust client for the file server
+  ([e32-rs](https://github.com/NeoSymbian/e32-rs)).
 - ✅ A Rust launcher UI renders through Slint's software renderer ([neoui](https://github.com/NeoSymbian/neoui)).
-- ⏳ Next: the full kernel on all 8 cores, then user mode and a Symbian shell on the phone; on the Rust side, memory,
-  threads and IPC.
+- ⏳ Next: the full kernel on all 8 cores, then user mode and a Symbian shell on the phone; on the Rust side, an IPC
+  server and the UI on Syborg.
 
 Follow along in the [roadmap](https://github.com/NeoSymbian/symbian-pixel/blob/main/docs/roadmap.md).
 
