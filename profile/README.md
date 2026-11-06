@@ -19,6 +19,7 @@ The first target is the **Google Pixel 3a XL**:
   emulates the old instructions ARMv8 dropped (SWP, misaligned LDRD/LDM).
 - ✅ The real 2010 user side boots on the phone: the file server and estart with a RAM drive as C:, and the Rust
   test programs pass there (heap, timers, async, threads, semaphores, files).
+- ✅ The Symbian shell (eshell) on the phone screen, drawn by the original 2010 window server.
 - ✅ Rust runs on the 2010 Symbian user side (QEMU Syborg): EXEs written in Rust only, making kernel exec calls
   directly, with a heap, timers, async, threads and a Rust client for the file server
   ([e32-rs](https://github.com/NeoSymbian/e32-rs)).
@@ -27,7 +28,7 @@ The first target is the **Google Pixel 3a XL**:
 - ✅ A Rust launcher UI renders through Slint's software renderer ([neoui](https://github.com/NeoSymbian/neoui)).
 - ✅ The Rust launcher **replaces the window server** on the 2010 Symbian user side (QEMU Syborg): it draws straight
   to the frame buffer and takes raw touch and key events from the kernel; tapping Phone opens the Phone screen.
-- ⏳ Next: a Symbian shell on the phone screen; on the Rust side, apps as separate processes (R6).
+- ⏳ Next: input on the phone (touch, keys), then the Rust UI on the phone; on the Rust side, apps as separate processes (R6).
 
 Follow along in the [roadmap](https://github.com/NeoSymbian/symbian-pixel/blob/main/docs/roadmap.md).
 
