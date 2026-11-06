@@ -39,23 +39,28 @@ The first target is the **Google Pixel 3a XL**:
 - ⏳ Next: on the Rust side, a soft keyboard and the apps on the phone; on the kernel side, storage (eMMC) and
   power.
 
-Follow along in the [roadmap](https://github.com/NeoSymbian/symbian-pixel/blob/main/docs/roadmap.md).
+Follow along in the [roadmap](https://github.com/NeoSymbian/docs/blob/main/roadmap.md).
 
 ## Repositories
 
 | Repository | What |
 |---|---|
-| [symbian-pixel](https://github.com/NeoSymbian/symbian-pixel) | New work: the AArch64 kernel port, the Pixel board support, docs and roadmap |
-| [oss.FCL.sf.os.kernelhwsrv](https://github.com/NeoSymbian/oss.FCL.sf.os.kernelhwsrv) | The EKA2 kernel. Our changes to the original files are commits on `main`. |
-| `oss.*` (98 more) | The rest of the 2010 Symbian source, forked from [SymbianSource](https://github.com/SymbianSource) |
-| [core](https://github.com/NeoSymbian/core), [pdk](https://github.com/NeoSymbian/pdk) | The build system, forked from [Phorepoc](https://github.com/Phorepoc) |
+| [kernel](https://github.com/NeoSymbian/kernel) | The EKA2 kernel with the AArch64 port, drivers and boards (`baseport/arm64`), in Symbian's own layout |
+| [build](https://github.com/NeoSymbian/build) | The build system: `neo`, the build image, the pinned sources, the 2010 ROM |
+| [e32-rs](https://github.com/NeoSymbian/e32-rs), [neoui](https://github.com/NeoSymbian/neoui) | Rust on the Symbian user side, and the Rust UI server and apps |
+| [docs](https://github.com/NeoSymbian/docs) | Roadmap, Rust integration, the port map |
+| [qemu-syborg](https://github.com/NeoSymbian/qemu-syborg) | The Symbian Foundation's QEMU with the Syborg board, for the 2010 ROM |
+| `oss.*` | The 2010 Symbian packages the build pins, forked from [SymbianSource](https://github.com/SymbianSource) |
+
+Archived: `symbian-pixel` (the port's first home), and the Phorepoc forks (`core`, `pdk`, `adaptation-*`) with the
+`oss.*` packages only they used.
 
 In every fork, the original branches stay untouched and our work is on `main`. Nothing is pushed back upstream.
 
 ## Credits and licences
 
 - Symbian source: Nokia and the Symbian Foundation, EPL-1.0, via [SymbianSource](https://github.com/SymbianSource).
-- Build system and many fixes for modern compilers: [Phorepoc](https://github.com/Phorepoc), Apache-2.0.
+- The first build system, the x86-64 port template and many fixes for modern compilers: [Phorepoc](https://github.com/Phorepoc), Apache-2.0.
 - Our own code: Apache-2.0.
 
 NeoSymbian is not affiliated with Nokia, Accenture, the former Symbian Foundation, or Google. "Symbian" is used only to
