@@ -33,8 +33,11 @@ The first target is the **Google Pixel 3a XL**:
 - ✅ Apps run as **separate Symbian processes** under the Rust UI server (QEMU Syborg): a live Clock app draws into
   a shared surface, gets touches, and exits on Back.
 - ✅ The Rust UI server runs **on the phone** in place of the shell: it draws the launcher and takes taps.
-- ⏳ Next: on the Rust side, a terminal for the old text programs (R6b) and the phone's tap scaling; on the kernel
-  side, storage (eMMC) and power.
+- ✅ A **Terminal app** in the Rust UI runs ESHELL and the 2010 text programs (QEMU Syborg): the stock console DLL
+  talks to a console server written in Rust. Taps are exact on any screen size (the emulator's pointer driver was
+  fixed at the source).
+- ⏳ Next: on the Rust side, a soft keyboard and the apps on the phone; on the kernel side, storage (eMMC) and
+  power.
 
 Follow along in the [roadmap](https://github.com/NeoSymbian/symbian-pixel/blob/main/docs/roadmap.md).
 
