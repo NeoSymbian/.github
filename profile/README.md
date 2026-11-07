@@ -36,8 +36,11 @@ The first target is the **Google Pixel 3a XL**:
 - ✅ A **Terminal app** in the Rust UI runs ESHELL and the 2010 text programs (QEMU Syborg): the stock console DLL
   talks to a console server written in Rust. Taps are exact on any screen size (the emulator's pointer driver was
   fixed at the source).
-- ⏳ Next: on the Rust side, a soft keyboard and the apps on the phone; on the kernel side, storage (eMMC) and
-  power.
+- ✅ **Storage on the phone:** Symbian's own FAT32 file system on the eMMC: `C:` (8 GB, the system drive) and `E:`
+  (~42 GB, mass memory) on the `userdata` partition, with long file names, TRIM and about 70 MB/s reads. Files
+  survive a reboot and a forced reset. A USB debug console lets the phone be tested without anyone touching it.
+- ⏳ Next: on the Rust side, a soft keyboard and the apps on the phone; on the kernel side, power (battery, idle,
+  sleep) and `Z:` from flash ([the storage plan](https://github.com/NeoSymbian/docs/blob/main/filesystem.md)).
 
 Follow along in the [roadmap](https://github.com/NeoSymbian/docs/blob/main/roadmap.md).
 
