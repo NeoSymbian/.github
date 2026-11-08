@@ -42,6 +42,9 @@ The first target is the **Google Pixel 3a XL**:
 - ✅ **NeoSymbian is installed on the phone and boots by itself.** The system drive `Z:` is read from flash, and
   every block is checked against SHA-256 hashes. A/B slots: a bad update falls back to the previous one on its own.
   A **Dev tools** app shows and saves the kernel's logs on the phone.
+- ✅ **The Syborg emulator moved to QEMU 11.1** ([symbian-qemu](https://github.com/NeoSymbian/symbian-qemu)): the
+  board rewritten in C with tests, runs natively on Apple Silicon too, VNC for live viewing, saved snapshots. Test
+  runs wait for the serial log instead of fixed sleeps: the Rust test suite went from ~4 minutes to ~20 seconds.
 - ⏳ Next: sharing `E:` with a PC over USB, updates from the phone itself, and power (battery, idle, sleep)
   ([the storage plan](https://github.com/NeoSymbian/docs/blob/main/filesystem.md)).
 
@@ -55,7 +58,7 @@ Follow along in the [roadmap](https://github.com/NeoSymbian/docs/blob/main/roadm
 | [build](https://github.com/NeoSymbian/build) | The build system: `neo`, the build image, the pinned sources, the 2010 ROM |
 | [e32-rs](https://github.com/NeoSymbian/e32-rs), [neoui](https://github.com/NeoSymbian/neoui) | Rust on the Symbian user side, and the Rust UI server and apps |
 | [docs](https://github.com/NeoSymbian/docs) | Roadmap, Rust integration, the port map |
-| [qemu-syborg](https://github.com/NeoSymbian/qemu-syborg) | The Symbian Foundation's QEMU with the Syborg board, for the 2010 ROM |
+| [symbian-qemu](https://github.com/NeoSymbian/symbian-qemu) | The Syborg board package: the baseport, QEMU 11.1 with the Syborg board, the test runner |
 | `oss.*` | The 2010 Symbian packages the build pins, forked from [SymbianSource](https://github.com/SymbianSource) |
 
 Archived: `symbian-pixel` (the port's first home), and the Phorepoc forks (`core`, `pdk`, `adaptation-*`) with the
