@@ -1,14 +1,14 @@
+[![NeoSymbian: open-source Symbian for modern hardware](https://raw.githubusercontent.com/NeoSymbian/.github/main/profile/assets/neo-symbian-banner.svg)](https://github.com/NeoSymbian/docs)
+
 # NeoSymbian
 
-A hobby project bringing **open-source Symbian** back to modern hardware. It uses EKA2, the Symbian^3 kernel released
-in 2010.
+**Open-source Symbian for modern hardware.** NeoSymbian is a volunteer, non-commercial project building on the Symbian^3 EKA2 source released in 2010.
 
-The first target is the **Google Pixel 3a XL**:
-- the EKA2 kernel ported to **64-bit ARM (AArch64)**;
-- the original 2010 Symbian user side running unchanged in 32-bit mode;
-- later, a new touch UI written in **Rust**.
+The first target is the **Google Pixel 3a XL**. The EKA2 kernel runs on **64-bit ARM (AArch64)**, the original 2010 Symbian user side runs in 32-bit mode, and a new touch UI written in **Rust** runs on the phone.
 
-## Status
+[Documentation](https://github.com/NeoSymbian/docs) · [Roadmap](https://github.com/NeoSymbian/docs/blob/main/roadmap.md) · [Build system](https://github.com/NeoSymbian/build) · [Kernel](https://github.com/NeoSymbian/kernel) · [Rust UI](https://github.com/NeoSymbian/neoui)
+
+## What works today
 
 - ✅ The 2010 SMP nanokernel boots on QEMU and on the **real phone**, on all 8 cores (GICv3, generic timer, PSCI, SMP
   load balancing).
@@ -50,7 +50,9 @@ The first target is the **Google Pixel 3a XL**:
   touched, with the UI moved onto them. Dragging went from 8 to 37–62 frames per second. Animations now copy
   already-drawn pixels instead of redrawing: the home page swipe takes 6 ms a frame, and screen fades and list
   scrolling are 2–3× faster.
-- ⏳ Next: sharing `E:` with a PC over USB, updates from the phone itself, and power (battery, idle, sleep)
+## Next
+
+Sharing `E:` with a PC over USB, updates from the phone itself, and power (battery, idle, sleep)
   ([the storage plan](https://github.com/NeoSymbian/docs/blob/main/filesystem.md)).
 
 Follow along in the [roadmap](https://github.com/NeoSymbian/docs/blob/main/roadmap.md).
