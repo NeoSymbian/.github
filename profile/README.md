@@ -39,8 +39,11 @@ The first target is the **Google Pixel 3a XL**:
 - ✅ **Storage on the phone:** Symbian's own FAT32 file system on the eMMC: `C:` (8 GB, the system drive) and `E:`
   (~42 GB, mass memory) on the `userdata` partition, with long file names, TRIM and about 70 MB/s reads. Files
   survive a reboot and a forced reset. A USB debug console lets the phone be tested without anyone touching it.
-- ⏳ Next: on the Rust side, a soft keyboard and the apps on the phone; on the kernel side, power (battery, idle,
-  sleep) and `Z:` from flash ([the storage plan](https://github.com/NeoSymbian/docs/blob/main/filesystem.md)).
+- ✅ **NeoSymbian is installed on the phone and boots by itself.** The system drive `Z:` is read from flash, and
+  every block is checked against SHA-256 hashes. A/B slots: a bad update falls back to the previous one on its own.
+  A **Dev tools** app shows and saves the kernel's logs on the phone.
+- ⏳ Next: sharing `E:` with a PC over USB, updates from the phone itself, and power (battery, idle, sleep)
+  ([the storage plan](https://github.com/NeoSymbian/docs/blob/main/filesystem.md)).
 
 Follow along in the [roadmap](https://github.com/NeoSymbian/docs/blob/main/roadmap.md).
 
