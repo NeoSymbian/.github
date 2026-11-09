@@ -53,7 +53,8 @@ The first target is the **Google Pixel 3a XL**. The EKA2 kernel runs on **64-bit
 - ✅ **Cellular on the phone** ([telephony](https://github.com/NeoSymbian/docs/blob/main/telephony.md)): our kernel
   boots the Pixel's modem and runs its packet engine (IPA). A Rust daemon talks to the modem: it registers on
   **LTE**, the status bar shows the operator and signal bars, and calls go out and come in from the Phone screen
-  (no call audio yet).
+  with **two-way audio** on the earpiece or loudspeaker (Mute, Speaker, volume keys, keypad tones). The Pixel's
+  audio DSP runs under our kernel.
 ## Next
 
 Sharing `E:` with a PC over USB, updates from the phone itself, and power (battery, idle, sleep)
