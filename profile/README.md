@@ -50,6 +50,10 @@ The first target is the **Google Pixel 3a XL**. The EKA2 kernel runs on **64-bit
   touched, with the UI moved onto them. Dragging went from 8 to 37–62 frames per second. Animations now copy
   already-drawn pixels instead of redrawing: the home page swipe takes 6 ms a frame, and screen fades and list
   scrolling are 2–3× faster.
+- ✅ **Cellular on the phone** ([telephony](https://github.com/NeoSymbian/docs/blob/main/telephony.md)): our kernel
+  boots the Pixel's modem and runs its packet engine (IPA). A Rust daemon talks to the modem: it registers on
+  **LTE**, the status bar shows the operator and signal bars, and calls go out and come in from the Phone screen
+  (no call audio yet).
 ## Next
 
 Sharing `E:` with a PC over USB, updates from the phone itself, and power (battery, idle, sleep)
@@ -65,6 +69,7 @@ Follow along in the [roadmap](https://github.com/NeoSymbian/docs/blob/main/roadm
 | [build](https://github.com/NeoSymbian/build) | The build system: `neo`, the build image, the pinned sources, the 2010 ROM |
 | [e32-rs](https://github.com/NeoSymbian/e32-rs), [neoui](https://github.com/NeoSymbian/neoui) | Rust on the Symbian user side, and the Rust UI server and apps |
 | [docs](https://github.com/NeoSymbian/docs) | Roadmap, Rust integration, the port map |
+| [telephony](https://github.com/NeoSymbian/telephony) | The cellular modem's user side in Rust: QRTR, QMI, the modem daemon |
 | [symbian-qemu](https://github.com/NeoSymbian/symbian-qemu) | The Syborg board package: the baseport, QEMU 11.1 with the Syborg board, the test runner |
 | `oss.*` | The 2010 Symbian packages the build pins, forked from [SymbianSource](https://github.com/SymbianSource) |
 
