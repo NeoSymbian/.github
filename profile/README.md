@@ -55,11 +55,12 @@ The first target is the **Google Pixel 3a XL**. The EKA2 kernel runs on **64-bit
   **LTE**, the status bar shows the operator and signal bars, and calls go out and come in from the Phone screen
   with **two-way audio** on the earpiece or loudspeaker (Mute, Speaker, volume keys, keypad tones). The Pixel's
   audio DSP runs under our kernel.
-- ✅ **Wi-Fi on the phone** ([wifi](https://github.com/NeoSymbian/docs/blob/main/wifi.md) W0–W4): the modem starts
+- ✅ **Wi-Fi on the phone** ([wifi](https://github.com/NeoSymbian/docs/blob/main/wifi.md) W0–W5): the modem starts
   the Wi-Fi firmware, our kernel drives the WCN3990's copy engines, HTC and WMI, and **Settings → Wi-Fi lists the
   networks nearby** on 2.4 and 5 GHz. **The phone joins a WPA2 network**: our kernel does the 802.11 join, a Rust
   supplicant ([neolink](https://github.com/NeoSymbian/neolink) `wpa`) runs the key handshake, and the status bar shows
-  the link. An IP address (DHCP) is next.
+  the link. **The phone gets an IP address and reaches the internet**: NEONET, a Rust IP stack on smoltcp, gets an
+  address by DHCP and gives apps TCP sockets (W5).
 - ✅ **A system keyboard in three languages** ([neoui-shell](https://github.com/NeoSymbian/docs/blob/main/neoui-shell.md)):
   English, Armenian (phonetic) and Russian, switched with a globe key and managed in **Settings → Language &
   keyboard**. Any text field raises it, for example the Wi-Fi password. The Terminal gets an Esc, Tab and arrows row.
@@ -84,7 +85,7 @@ Follow along in the [roadmap](https://github.com/NeoSymbian/docs/blob/main/roadm
 | [e32-rs](https://github.com/NeoSymbian/e32-rs), [neoui](https://github.com/NeoSymbian/neoui) | Rust on the Symbian user side, and the Rust UI server and apps |
 | [docs](https://github.com/NeoSymbian/docs) | Roadmap, Rust integration, the port map |
 | [telephony](https://github.com/NeoSymbian/telephony) | The cellular modem's user side in Rust: QRTR, QMI, the modem daemon |
-| [neolink](https://github.com/NeoSymbian/neolink) | Wireless connectivity in Rust: the Wi-Fi firmware's control client and the WPA2 supplicant today, Bluetooth later |
+| [neolink](https://github.com/NeoSymbian/neolink) | Wireless connectivity in Rust: the Wi-Fi firmware's control client, the WPA2 supplicant and the IP stack (NEONET) today, Bluetooth later |
 | [symbian-qemu](https://github.com/NeoSymbian/symbian-qemu) | The Syborg board package: the baseport, QEMU 11.1 with the Syborg board, the test runner |
 | `oss.*` | The 2010 Symbian packages the build pins, forked from [SymbianSource](https://github.com/SymbianSource) |
 
