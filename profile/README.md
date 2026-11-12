@@ -55,6 +55,11 @@ The first target is the **Google Pixel 3a XL**. The EKA2 kernel runs on **64-bit
   **LTE**, the status bar shows the operator and signal bars, and calls go out and come in from the Phone screen
   with **two-way audio** on the earpiece or loudspeaker (Mute, Speaker, volume keys, keypad tones). The Pixel's
   audio DSP runs under our kernel.
+- ✅ **Wi-Fi scanning on the phone** ([wifi](https://github.com/NeoSymbian/docs/blob/main/wifi.md) W0–W3): the
+  modem starts the Wi-Fi firmware, our kernel drives the WCN3990's copy engines, HTC and WMI, and **Settings → Wi-Fi
+  lists the networks nearby** on 2.4 and 5 GHz, with a refresh button and a sheet per network. Joining a network
+  (WPA2) is next.
+
 ## Next
 
 Sharing `E:` with a PC over USB, updates from the phone itself, and power (battery, idle, sleep)
@@ -71,6 +76,7 @@ Follow along in the [roadmap](https://github.com/NeoSymbian/docs/blob/main/roadm
 | [e32-rs](https://github.com/NeoSymbian/e32-rs), [neoui](https://github.com/NeoSymbian/neoui) | Rust on the Symbian user side, and the Rust UI server and apps |
 | [docs](https://github.com/NeoSymbian/docs) | Roadmap, Rust integration, the port map |
 | [telephony](https://github.com/NeoSymbian/telephony) | The cellular modem's user side in Rust: QRTR, QMI, the modem daemon |
+| [neolink](https://github.com/NeoSymbian/neolink) | Wireless connectivity in Rust: the Wi-Fi firmware's control client today, Bluetooth later |
 | [symbian-qemu](https://github.com/NeoSymbian/symbian-qemu) | The Syborg board package: the baseport, QEMU 11.1 with the Syborg board, the test runner |
 | `oss.*` | The 2010 Symbian packages the build pins, forked from [SymbianSource](https://github.com/SymbianSource) |
 
