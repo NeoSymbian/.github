@@ -59,6 +59,9 @@ The first target is the **Google Pixel 3a XL**. The EKA2 kernel runs on **64-bit
   modem starts the Wi-Fi firmware, our kernel drives the WCN3990's copy engines, HTC and WMI, and **Settings → Wi-Fi
   lists the networks nearby** on 2.4 and 5 GHz, with a refresh button and a sheet per network. Joining a network
   (WPA2) is next.
+- ✅ **A system keyboard in three languages** ([neoui-shell](https://github.com/NeoSymbian/docs/blob/main/neoui-shell.md)):
+  English, Armenian (phonetic) and Russian, switched with a globe key and managed in **Settings → Language &
+  keyboard**. Any text field raises it, for example the Wi-Fi password. The Terminal gets an Esc, Tab and arrows row.
 
 ## Next
 
