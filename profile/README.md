@@ -66,6 +66,10 @@ The first target is the **Google Pixel 3a XL**. The EKA2 kernel runs on **64-bit
 
 ## Next
 
+Complete calling (telephony C7) is being implemented on coordinated
+`feat/c7-complete-calls` branches: ringing and vibration, multi-call controls, SIM/radio UI and
+modem/audio-DSP recovery. Phone acceptance, including the documented return-to-LTE issue, remains pending.
+
 Sharing `E:` with a PC over USB, updates from the phone itself, and power (battery, idle, sleep)
   ([the storage plan](https://github.com/NeoSymbian/docs/blob/main/filesystem.md)).
 
