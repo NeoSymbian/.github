@@ -55,12 +55,14 @@ The first target is the **Google Pixel 3a XL**. The EKA2 kernel runs on **64-bit
   **LTE**, the status bar shows the operator and signal bars, and calls go out and come in from the Phone screen
   with **two-way audio** on the earpiece or loudspeaker (Mute, Speaker, volume keys, keypad tones). The Pixel's
   audio DSP runs under our kernel.
-- ✅ **Wi-Fi on the phone** ([wifi](https://github.com/NeoSymbian/docs/blob/main/wifi.md) W0–W5): the modem starts
+- ✅ **Wi-Fi on the phone** ([wifi](https://github.com/NeoSymbian/docs/blob/main/wifi.md) W0–W7, W5a): the modem starts
   the Wi-Fi firmware, our kernel drives the WCN3990's copy engines, HTC and WMI, and **Settings → Wi-Fi lists the
   networks nearby** on 2.4 and 5 GHz. **The phone joins a WPA2 network**: our kernel does the 802.11 join, a Rust
   supplicant ([neolink](https://github.com/NeoSymbian/neolink) `wpa`) runs the key handshake, and the status bar shows
   the link. **The phone gets an IP address and reaches the internet**: NEONET, a Rust IP stack on smoltcp, gets an
-  address by DHCP and gives apps TCP sockets (W5).
+  address by DHCP and gives apps TCP and UDP sockets (W5). The driver now sleeps on the chip's interrupts instead of
+  polling (W7). **Unchanged 2010 programs reach the internet through the real socket API** (W5a): the 2010 socket
+  server (ESOCK) runs over NEONET with no TCPIP6, using our protocol module and an always-up connection tier.
 - ✅ **A system keyboard in three languages** ([neoui-shell](https://github.com/NeoSymbian/docs/blob/main/neoui-shell.md)):
   English, Armenian (phonetic) and Russian, switched with a globe key and managed in **Settings → Language &
   keyboard**. Any text field raises it, for example the Wi-Fi password. The Terminal gets an Esc, Tab and arrows row.
