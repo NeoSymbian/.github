@@ -78,6 +78,11 @@ The first target is the **Google Pixel 3a XL**. The EKA2 kernel runs on **64-bit
 Text messages (telephony C9): sending and receiving SMS, a real Messages app, and replying to a call with a message.
 Emergency calls through the modem's emergency call type.
 
+Old Symbian apps ([legacy](https://github.com/NeoSymbian/docs/blob/main/legacy.md)): unmodified S60 `.sis` apps in
+one shared 2010 window server inside the Rust UI. The **Old apps** screen already lists the installed apps from
+Symbian's app registry, with their icons, and starts them (QEMU); next come SVG icons and getting X-plore and Frozen
+Bubble through their start-up.
+
 Sharing `E:` with a PC over USB, updates from the phone itself, and power (battery, idle, sleep)
   ([the storage plan](https://github.com/NeoSymbian/docs/blob/main/filesystem.md)).
 
@@ -94,6 +99,7 @@ Follow along in the [roadmap](https://github.com/NeoSymbian/docs/blob/main/roadm
 | [telephony](https://github.com/NeoSymbian/telephony) | The cellular modem's user side in Rust: QRTR, QMI, the modem daemon |
 | [phone](https://github.com/NeoSymbian/phone) | Phone and Contacts: the NEOPHONE app (Rust + Slint), its contacts model and call logic |
 | [neolink](https://github.com/NeoSymbian/neolink) | Wireless connectivity in Rust: the Wi-Fi firmware's control client, the WPA2 supplicant and the IP stack (NEONET) today, Bluetooth later |
+| [legacy](https://github.com/NeoSymbian/legacy) | Old S60 apps inside the Rust UI: LEGACY.EXE (the guest window server and the Old apps launcher), the legacy component list and `.sis` tools |
 | [symbian-qemu](https://github.com/NeoSymbian/symbian-qemu) | The Syborg board package: the baseport, QEMU 11.1 with the Syborg board, the test runner |
 | `oss.*` | The 2010 Symbian packages the build pins, forked from [SymbianSource](https://github.com/SymbianSource) |
 
