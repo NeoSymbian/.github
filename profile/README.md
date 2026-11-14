@@ -66,12 +66,17 @@ The first target is the **Google Pixel 3a XL**. The EKA2 kernel runs on **64-bit
 - ✅ **A system keyboard in three languages** ([neoui-shell](https://github.com/NeoSymbian/docs/blob/main/neoui-shell.md)):
   English, Armenian (phonetic) and Russian, switched with a globe key and managed in **Settings → Language &
   keyboard**. Any text field raises it, for example the Wi-Fi password. The Terminal gets an Esc, Tab and arrows row.
+- ✅ **Phone and Contacts as one Rust app** ([phone](https://github.com/NeoSymbian/phone), telephony C8): NEOPHONE
+  sits behind both home icons in the N8 Belle look, redrawn for the Pixel. It has a dialer with smart matching,
+  Recents, call details and speed dial. The call screens cover incoming, active, call waiting, two calls with swap
+  and conference, the keypad and the summary. Contacts have Latin, Armenian and Cyrillic sections, a card, an editor
+  and vCards. Caller ID and call waiting work on the network, and **a blocklist** in the modem daemon rejects
+  blocked callers as busy before the phone rings. Number fields bring up a phone pad.
 
 ## Next
 
-Complete calling (telephony C7) is being implemented on coordinated
-`feat/c7-complete-calls` branches: ringing and vibration, multi-call controls, SIM/radio UI and
-modem/audio-DSP recovery. Phone acceptance, including the documented return-to-LTE issue, remains pending.
+Text messages (telephony C9): sending and receiving SMS, a real Messages app, and replying to a call with a message.
+Emergency calls through the modem's emergency call type.
 
 Sharing `E:` with a PC over USB, updates from the phone itself, and power (battery, idle, sleep)
   ([the storage plan](https://github.com/NeoSymbian/docs/blob/main/filesystem.md)).
@@ -87,6 +92,7 @@ Follow along in the [roadmap](https://github.com/NeoSymbian/docs/blob/main/roadm
 | [e32-rs](https://github.com/NeoSymbian/e32-rs), [neoui](https://github.com/NeoSymbian/neoui) | Rust on the Symbian user side, and the Rust UI server and apps |
 | [docs](https://github.com/NeoSymbian/docs) | Roadmap, Rust integration, the port map |
 | [telephony](https://github.com/NeoSymbian/telephony) | The cellular modem's user side in Rust: QRTR, QMI, the modem daemon |
+| [phone](https://github.com/NeoSymbian/phone) | Phone and Contacts: the NEOPHONE app (Rust + Slint), its contacts model and call logic |
 | [neolink](https://github.com/NeoSymbian/neolink) | Wireless connectivity in Rust: the Wi-Fi firmware's control client, the WPA2 supplicant and the IP stack (NEONET) today, Bluetooth later |
 | [symbian-qemu](https://github.com/NeoSymbian/symbian-qemu) | The Syborg board package: the baseport, QEMU 11.1 with the Syborg board, the test runner |
 | `oss.*` | The 2010 Symbian packages the build pins, forked from [SymbianSource](https://github.com/SymbianSource) |
