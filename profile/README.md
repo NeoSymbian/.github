@@ -72,11 +72,15 @@ The first target is the **Google Pixel 3a XL**. The EKA2 kernel runs on **64-bit
   and conference, the keypad and the summary. Contacts have Latin, Armenian and Cyrillic sections, a card, an editor
   and vCards. Caller ID and call waiting work on the network, and **a blocklist** in the modem daemon rejects
   blocked callers as busy before the phone rings. Number fields bring up a phone pad.
+- 🔧 **Messages, NEOPHONE's third icon** (telephony C9, built; the phone test is next): SMS in the modem daemon
+  over QMI WMS. Armenian, Cyrillic and long texts are split into parts, ✓✓ shows delivery, and messages are kept
+  even while the app is closed. Conversations, threads and new messages to several people. **Reply with message**
+  answers a call with busy and a text. The blocklist covers messages too.
 
 ## Next
 
-Text messages (telephony C9): sending and receiving SMS, a real Messages app, and replying to a call with a message.
-Emergency calls through the modem's emergency call type.
+An SMS round-trip on the phone (telephony C9's exit test), then emergency calls through the modem's emergency call
+type.
 
 Old Symbian apps ([legacy](https://github.com/NeoSymbian/docs/blob/main/legacy.md)): unmodified S60 `.sis` apps in
 one shared 2010 window server inside the Rust UI. The **Old apps** screen already lists the installed apps from
@@ -97,7 +101,7 @@ Follow along in the [roadmap](https://github.com/NeoSymbian/docs/blob/main/roadm
 | [e32-rs](https://github.com/NeoSymbian/e32-rs), [neoui](https://github.com/NeoSymbian/neoui) | Rust on the Symbian user side, and the Rust UI server and apps |
 | [docs](https://github.com/NeoSymbian/docs) | Roadmap, Rust integration, the port map |
 | [telephony](https://github.com/NeoSymbian/telephony) | The cellular modem's user side in Rust: QRTR, QMI, the modem daemon |
-| [phone](https://github.com/NeoSymbian/phone) | Phone and Contacts: the NEOPHONE app (Rust + Slint), its contacts model and call logic |
+| [phone](https://github.com/NeoSymbian/phone) | Phone, Contacts and Messages: the NEOPHONE app (Rust + Slint), its contacts model, call and message logic |
 | [neolink](https://github.com/NeoSymbian/neolink) | Wireless connectivity in Rust: the Wi-Fi firmware's control client, the WPA2 supplicant and the IP stack (NEONET) today, Bluetooth later |
 | [legacy](https://github.com/NeoSymbian/legacy) | Old S60 apps inside the Rust UI: LEGACY.EXE (the guest window server and the Old apps launcher), the legacy component list and `.sis` tools |
 | [symbian-qemu](https://github.com/NeoSymbian/symbian-qemu) | The Syborg board package: the baseport, QEMU 11.1 with the Syborg board, the test runner |
