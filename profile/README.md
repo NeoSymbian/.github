@@ -72,15 +72,14 @@ The first target is the **Google Pixel 3a XL**. The EKA2 kernel runs on **64-bit
   and conference, the keypad and the summary. Contacts have Latin, Armenian and Cyrillic sections, a card, an editor
   and vCards. Caller ID and call waiting work on the network, and **a blocklist** in the modem daemon rejects
   blocked callers as busy before the phone rings. Number fields bring up a phone pad.
-- 🔧 **Messages, NEOPHONE's third icon** (telephony C9, built; the phone test is next): SMS in the modem daemon
+- ✅ **Messages, NEOPHONE's third icon** (telephony C9): SMS in the modem daemon
   over QMI WMS. Armenian, Cyrillic and long texts are split into parts, ✓✓ shows delivery, and messages are kept
   even while the app is closed. Conversations, threads and new messages to several people. **Reply with message**
   answers a call with busy and a text. The blocklist covers messages too.
 
 ## Next
 
-An SMS round-trip on the phone (telephony C9's exit test), then emergency calls through the modem's emergency call
-type.
+Emergency calls through the modem's emergency call type.
 
 Old Symbian apps ([legacy](https://github.com/NeoSymbian/docs/blob/main/legacy.md)): unmodified S60 `.sis` apps in
 one shared 2010 window server inside the Rust UI. The **Old apps** screen already lists the installed apps from
