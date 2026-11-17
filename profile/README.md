@@ -76,6 +76,9 @@ The first target is the **Google Pixel 3a XL**; the **Pixel 3a** (same chip) has
   over QMI WMS. Armenian, Cyrillic and long texts are split into parts, ✓✓ shows delivery, and messages are kept
   even while the app is closed. Conversations, threads and new messages to several people. **Reply with message**
   answers a call with busy and a text. The blocklist covers messages too.
+- ✅ **Groundwork for a web browser** ([browser](https://github.com/NeoSymbian/docs/blob/main/browser.md), Servo):
+  Servo 0.8 runs on emulated 32-bit ARM Linux at phone size (WB0). On the phone, the kernel now gives apps hardware
+  floating point and NEON, switched per thread, plus 16 MB thread stacks and secure random numbers (WB1).
 
 ## Next
 
@@ -103,6 +106,7 @@ Follow along in the [roadmap](https://github.com/NeoSymbian/docs/blob/main/roadm
 | [phone](https://github.com/NeoSymbian/phone) | Phone, Contacts and Messages: the NEOPHONE app (Rust + Slint), its contacts model, call and message logic |
 | [neolink](https://github.com/NeoSymbian/neolink) | Wireless connectivity in Rust: the Wi-Fi firmware's control client, the WPA2 supplicant and the IP stack (NEONET) today, Bluetooth later |
 | [legacy](https://github.com/NeoSymbian/legacy) | Old S60 apps inside the Rust UI: LEGACY.EXE (the guest window server and the Old apps launcher), the legacy component list and `.sis` tools |
+| [browser](https://github.com/NeoSymbian/browser) | The web browser: Servo on NeoSymbian (the armv7 host proof, the embedder, measurements) |
 | [symbian-qemu](https://github.com/NeoSymbian/symbian-qemu) | The Syborg board package: the baseport, QEMU 11.1 with the Syborg board, the test runner |
 | `oss.*` | The 2010 Symbian packages the build pins, forked from [SymbianSource](https://github.com/SymbianSource) |
 
