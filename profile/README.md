@@ -76,6 +76,13 @@ The first target is the **Google Pixel 3a XL**; the **Pixel 3a** (same chip) has
   over QMI WMS. Armenian, Cyrillic and long texts are split into parts, ✓✓ shows delivery, and messages are kept
   even while the app is closed. Conversations, threads and new messages to several people. **Reply with message**
   answers a call with busy and a text. The blocklist covers messages too.
+- ✅ **UI v2: Phone, Contacts and Messages as three apps, installed on the phone** ([phone-apps](https://github.com/NeoSymbian/docs/blob/main/phone-apps.md)):
+  every app now draws its header and footer from a shared Rust kit, in the new NeoSans font (Latin and Armenian).
+  Phone, Contacts and Messages are three separate programs that open each other, each with its own card in Open apps.
+  Every screen of the design canvas is built and wired, including the proposals: one entry per conversation in the
+  notification shade with Reply, swipe to archive, a shared settings page, and a Return to call bar in all three apps.
+  Calls show a Conference screen after a merge. The home icons show missed calls and unread messages, and `*#06#`
+  shows the IMEI.
 - ✅ **Groundwork for a web browser** ([browser](https://github.com/NeoSymbian/docs/blob/main/browser.md), Servo):
   Servo 0.8 runs on emulated 32-bit ARM Linux at phone size (WB0). On the phone, the kernel now gives apps hardware
   floating point and NEON, switched per thread, plus 16 MB thread stacks and secure random numbers (WB1).
