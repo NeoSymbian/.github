@@ -83,6 +83,12 @@ The first target is the **Google Pixel 3a XL**; the **Pixel 3a** (same chip) has
   notification shade with Reply, swipe to archive, a shared settings page, and a Return to call bar in all three apps.
   Calls show a Conference screen after a merge. The home icons show missed calls and unread messages, and `*#06#`
   shows the IMEI.
+- ✅ **Sound for apps** ([audio](https://github.com/NeoSymbian/docs/blob/main/audio.md)): NeoAudio, a Rust audio
+  service, mixes any number of streams at any rate and plays them through the Pixel's audio DSP. It also records from
+  the microphone. **Settings → Sounds → Media** sets the media volume and the speaker, and has a test sound and a
+  record-and-play-back test; the volume keys set the media volume outside a call. Calls and the ringtone take over
+  the speaker. **Old apps get sound too**: their unmodified 2010 audio framework talks to NeoAudio through our
+  adaptor, so Frozen Bubble plays its sounds. The 3.5 mm jack has a driver.
 - ✅ **Groundwork for a web browser** ([browser](https://github.com/NeoSymbian/docs/blob/main/browser.md), Servo):
   Servo 0.8 runs on emulated 32-bit ARM Linux at phone size (WB0). On the phone, the kernel now gives apps hardware
   floating point and NEON, switched per thread, plus 16 MB thread stacks and secure random numbers (WB1).
