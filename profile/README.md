@@ -50,15 +50,15 @@ The first target is the **Google Pixel 3a XL**; the **Pixel 3a** (same chip) has
   touched, with the UI moved onto them. Dragging went from 8 to 37–62 frames per second. Animations now copy
   already-drawn pixels instead of redrawing: the home page swipe takes 6 ms a frame, and screen fades and list
   scrolling are 2–3× faster.
-- ✅ **Cellular on the phone** ([telephony](https://github.com/NeoSymbian/docs/blob/main/telephony.md)): our kernel
+- ✅ **Cellular on the phone** ([telephony](https://github.com/NeoSymbian/docs/blob/main/hardware/modem.md)): our kernel
   boots the Pixel's modem and runs its packet engine (IPA). A Rust daemon talks to the modem: it registers on
   **LTE**, the status bar shows the operator and signal bars, and calls go out and come in from the Phone screen
   with **two-way audio** on the earpiece or loudspeaker (Mute, Speaker, volume keys, keypad tones). The Pixel's
   audio DSP runs under our kernel.
-- ✅ **Wi-Fi on the phone** ([wifi](https://github.com/NeoSymbian/docs/blob/main/wifi.md) W0–W7, W5a): the modem starts
+- ✅ **Wi-Fi on the phone** ([wifi](https://github.com/NeoSymbian/docs/blob/main/hardware/wifi.md) W0–W7, W5a): the modem starts
   the Wi-Fi firmware, our kernel drives the WCN3990's copy engines, HTC and WMI, and **Settings → Wi-Fi lists the
   networks nearby** on 2.4 and 5 GHz. **The phone joins a WPA2 network**: our kernel does the 802.11 join, a Rust
-  supplicant ([neolink](https://github.com/NeoSymbian/neolink) `wpa`) runs the key handshake, and the status bar shows
+  supplicant ([neohw](https://github.com/NeoSymbian/neohw) `wpa`) runs the key handshake, and the status bar shows
   the link. **The phone gets an IP address and reaches the internet**: NEONET, a Rust IP stack on smoltcp, gets an
   address by DHCP and gives apps TCP and UDP sockets (W5). The driver now sleeps on the chip's interrupts instead of
   polling (W7). **Unchanged 2010 programs reach the internet through the real socket API** (W5a): the 2010 socket
@@ -83,7 +83,7 @@ The first target is the **Google Pixel 3a XL**; the **Pixel 3a** (same chip) has
   notification shade with Reply, swipe to archive, a shared settings page, and a Return to call bar in all three apps.
   Calls show a Conference screen after a merge. The home icons show missed calls and unread messages, and `*#06#`
   shows the IMEI.
-- ✅ **Sound for apps** ([audio](https://github.com/NeoSymbian/docs/blob/main/audio.md)): NeoAudio, a Rust audio
+- ✅ **Sound for apps** ([audio](https://github.com/NeoSymbian/docs/blob/main/hardware/audio.md)): NeoAudio, a Rust audio
   service, mixes any number of streams at any rate and plays them through the Pixel's audio DSP. It also records from
   the microphone. **Settings → Sounds → Media** sets the media volume and the speaker, and has a test sound and a
   record-and-play-back test; the volume keys set the media volume outside a call. Calls and the ringtone take over
@@ -115,9 +115,8 @@ Follow along in the [roadmap](https://github.com/NeoSymbian/docs/blob/main/roadm
 | [build](https://github.com/NeoSymbian/build) | The build system: `neo`, the build image, the pinned sources, the 2010 ROM |
 | [e32-rs](https://github.com/NeoSymbian/e32-rs), [neoui](https://github.com/NeoSymbian/neoui) | Rust on the Symbian user side, and the Rust UI server and apps |
 | [docs](https://github.com/NeoSymbian/docs) | Roadmap, Rust integration, the port map |
-| [telephony](https://github.com/NeoSymbian/telephony) | The cellular modem's user side in Rust: QRTR, QMI, the modem daemon |
+| [neohw](https://github.com/NeoSymbian/neohw) | The hardware's user side in Rust (was telephony + neolink): the modem, audio, Wi-Fi and IP daemons; [hardware.md](https://github.com/NeoSymbian/docs/blob/main/hardware.md) lists every driver |
 | [phone](https://github.com/NeoSymbian/phone) | Phone, Contacts and Messages: the NEOPHONE app (Rust + Slint), its contacts model, call and message logic |
-| [neolink](https://github.com/NeoSymbian/neolink) | Wireless connectivity in Rust: the Wi-Fi firmware's control client, the WPA2 supplicant and the IP stack (NEONET) today, Bluetooth later |
 | [legacy](https://github.com/NeoSymbian/legacy) | Old S60 apps inside the Rust UI: LEGACY.EXE (the guest window server and the Old apps launcher), the legacy component list and `.sis` tools |
 | [browser](https://github.com/NeoSymbian/browser) | The web browser: Servo on NeoSymbian (the armv7 host proof, the embedder, measurements) |
 | [symbian-qemu](https://github.com/NeoSymbian/symbian-qemu) | The Syborg board package: the baseport, QEMU 11.1 with the Syborg board, the test runner |
