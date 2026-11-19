@@ -99,7 +99,10 @@ The first target is the **Google Pixel 3a XL**; the **Pixel 3a** (same chip) has
   and tar archives to browse, extract and create (a 1 GB zip extracts in about a minute).
 - ✅ **Groundwork for a web browser** ([browser](https://github.com/NeoSymbian/docs/blob/main/browser.md), Servo):
   Servo 0.8 runs on emulated 32-bit ARM Linux at phone size (WB0). On the phone, the kernel now gives apps hardware
-  floating point and NEON, switched per thread, plus 16 MB thread stacks and secure random numbers (WB1).
+  floating point and NEON, switched per thread, plus 16 MB thread stacks and secure random numbers (WB1). Rust's
+  standard library and Tokio run on the phone and fetch web pages over Wi-Fi (WB2), and Servo's JavaScript engine,
+  SpiderMonkey, passes its tests on the phone: the language, garbage collection, threads and running out of memory
+  cleanly (WB3).
 
 ## Next
 
