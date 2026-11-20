@@ -89,14 +89,16 @@ The first target is the **Google Pixel 3a XL**; the **Pixel 3a** (same chip) has
   record-and-play-back test; the volume keys set the media volume outside a call. Calls and the ringtone take over
   the speaker. **Old apps get sound too**: their unmodified 2010 audio framework talks to NeoAudio through our
   adaptor, so Frozen Bubble plays its sounds. The 3.5 mm jack has a driver.
-- ✅ **Files v2** ([files-app](https://github.com/NeoSymbian/docs/blob/main/files-app.md) FA1–FA6, Syborg and the
+- ✅ **Files v2** ([files-app](https://github.com/NeoSymbian/docs/blob/main/files-app.md) FA1–FA7, Syborg and the
   phone): the new design's drive and folder screens; copy and move on a background thread with a progress bar in the
   notification shade; a Recycle bin per drive that survives power cuts and reboots; Recent, Favourites, a Types tab and
   search over a file index; Free up space (large files, old downloads, duplicates); Details; and a text and code
   editor with syntax colours, find and replace, Markdown preview and CSV tables, which saves files byte for byte and
   opens a 5 MB log in about a second; an image viewer with thumbnails, swipe and pinch zoom, and an editor that
   rotates, crops and resizes (JPEG, PNG, GIF, WebP, BMP, SVG; a 12 MP photo opens in about a second); zip, gzip
-  and tar archives to browse, extract and create (a 1 GB zip extracts in about a minute).
+  and tar archives to browse, extract and create (a 1 GB zip extracts in about a minute); contact cards and calendar
+  events to view and edit, with Add to Contacts; and viewers for fonts, certificates, app packages and any other
+  file as hex.
 - ✅ **Groundwork for a web browser** ([browser](https://github.com/NeoSymbian/docs/blob/main/browser.md), Servo):
   Servo 0.8 runs on emulated 32-bit ARM Linux at phone size (WB0). On the phone, the kernel now gives apps hardware
   floating point and NEON, switched per thread, plus 16 MB thread stacks and secure random numbers (WB1). Rust's
