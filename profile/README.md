@@ -100,7 +100,11 @@ The first target is the **Google Pixel 3a XL**; the **Pixel 3a** (same chip) has
   events to view and edit, with Add to Contacts; and viewers for fonts, certificates, app packages and any other
   file as hex; Open with, Share, and Files as the system file picker, with apps passing open files to each other
   by handle.
-- ✅ **Groundwork for a web browser** ([browser](https://github.com/NeoSymbian/docs/blob/main/browser.md), Servo):
+- ✅ **A web browser** ([browser](https://github.com/NeoSymbian/docs/blob/main/browser.md), Servo): Servo draws
+  real web pages, https included, in the Browser app on the phone (WB4). You can type into forms in English and
+  Armenian, answer page dialogs, upload a file through Files, open pages in tabs, press and hold a link for its menu,
+  find text on the page, select and copy it, and keep bookmarks, history and downloads, with scrolling at 15–18 frames
+  a second (WB5). The groundwork:
   Servo 0.8 runs on emulated 32-bit ARM Linux at phone size (WB0). On the phone, the kernel now gives apps hardware
   floating point and NEON, switched per thread, plus 16 MB thread stacks and secure random numbers (WB1). Rust's
   standard library and Tokio run on the phone and fetch web pages over Wi-Fi (WB2), and Servo's JavaScript engine,
