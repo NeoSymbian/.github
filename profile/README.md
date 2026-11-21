@@ -45,7 +45,7 @@ The first target is the **Google Pixel 3a XL**; the **Pixel 3a** (same chip) has
 - ✅ **The Syborg emulator moved to QEMU 11.1** ([symbian-qemu](https://github.com/NeoSymbian/symbian-qemu)): the
   board rewritten in C with tests, runs natively on Apple Silicon too, VNC for live viewing, saved snapshots. Test
   runs wait for the serial log instead of fixed sleeps: the Rust test suite went from ~4 minutes to ~20 seconds.
-- ✅ **A faster, steadier UI on the phone** ([smooth-ui](https://github.com/NeoSymbian/docs/blob/main/smooth-ui.md) S1–S3):
+- ✅ **A faster, steadier UI on the phone** ([smooth-ui](https://github.com/NeoSymbian/docs/blob/main/neoui-shell/smooth-ui.md) S1–S3):
   no lost taps, frames paced at 60 fps, and the fast cores at full clock (300 → 1996 MHz) while the screen is
   touched, with the UI moved onto them. Dragging went from 8 to 37–62 frames per second. Animations now copy
   already-drawn pixels instead of redrawing: the home page swipe takes 6 ms a frame, and screen fades and list
