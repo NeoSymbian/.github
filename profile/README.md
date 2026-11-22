@@ -112,6 +112,10 @@ The first target is the **Google Pixel 3a XL**; the **Pixel 3a** (same chip) has
   standard library and Tokio run on the phone and fetch web pages over Wi-Fi (WB2), and Servo's JavaScript engine,
   SpiderMonkey, passes its tests on the phone: the language, garbage collection, threads and running out of memory
   cleanly (WB3).
+- ✅ **The 2010 user side is built for ARMv8** ([user-side-smp](https://github.com/NeoSymbian/docs/blob/main/user-side-smp.md)
+  US2 + US3): every 2010 Symbian library, server and program now compiles as 32-bit ARMv8 with hardware floating point
+  and SMP-safe memory barriers, instead of ARMv5. Same exports, 1 % smaller, same boot time; old S60 apps keep
+  running unchanged. Our Rust code moves next (US4).
 
 ## Next
 
