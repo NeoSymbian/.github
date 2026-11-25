@@ -126,6 +126,10 @@ The first target is the **Google Pixel 3a XL**; the **Pixel 3a** (same chip) has
 
 Emergency calls through the modem's emergency call type.
 
+A **Settings app** of its own ([settings-app](https://github.com/NeoSymbian/docs/blob/main/settings-app.md)): Settings
+leaves the shell for `NEOSET.EXE`, so it shows in Open apps, with every page of the Settings v2 design (Wi-Fi,
+mobile, sound profiles, display, battery, storage, apps, privacy, reset) in stages SE0–SE7.
+
 Old Symbian apps ([legacy](https://github.com/NeoSymbian/docs/blob/main/legacy.md)): unmodified S60 `.sis` apps in
 one shared 2010 window server inside the Rust UI. The **Old apps** screen already lists the installed apps from
 Symbian's app registry, with their icons, and starts them (QEMU); next come SVG icons and getting X-plore and Frozen
