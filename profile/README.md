@@ -126,7 +126,7 @@ The first target is the **Google Pixel 3a XL**; the **Pixel 3a** (same chip) has
 
 Emergency calls through the modem's emergency call type.
 
-A **Settings app** of its own ([settings-app](https://github.com/NeoSymbian/docs/blob/main/settings-app.md)): Settings
+A **Settings app** of its own ([neoui-shell/settings](https://github.com/NeoSymbian/docs/blob/main/neoui-shell/settings.md#the-settings-app-neoset)): Settings
 leaves the shell for `NEOSET.EXE`, so it shows in Open apps, with every page of the Settings v2 design (Wi-Fi,
 mobile, sound profiles, display, battery, storage, apps, privacy, reset) in stages SE0–SE7.
 
