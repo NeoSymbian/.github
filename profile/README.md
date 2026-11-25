@@ -117,7 +117,9 @@ The first target is the **Google Pixel 3a XL**; the **Pixel 3a** (same chip) has
   and SMP-safe memory barriers, instead of ARMv5. Same exports, 1 % smaller, same boot time; old S60 apps keep
   running unchanged. Our Rust code followed (US4, 2026-11-25): real atomics, NEON, and the UI draws its home screen
   2.2× faster. The ARMv5 leftovers and the old Syborg emulator build are gone (US5): CI and the phone now build
-  byte-identical system files, checked on every build.
+  byte-identical system files, checked on every build. CI tests it all on QEMU's `virt` board with our kernel (US6):
+  the ARMv8 CRC, AES and SHA instructions (also on both of the phone's core clusters), the multicore checks, and the
+  touch UI itself, now with a screen, touch and keys that can be watched over VNC.
 
 ## Next
 
