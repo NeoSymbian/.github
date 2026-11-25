@@ -89,7 +89,7 @@ The first target is the **Google Pixel 3a XL**; the **Pixel 3a** (same chip) has
   record-and-play-back test; the volume keys set the media volume outside a call. Calls and the ringtone take over
   the speaker. **Old apps get sound too**: their unmodified 2010 audio framework talks to NeoAudio through our
   adaptor, so Frozen Bubble plays its sounds. The 3.5 mm jack has a driver.
-- ✅ **Files v2** ([files-app](https://github.com/NeoSymbian/docs/blob/main/files-app.md) FA1–FA10, the
+- ✅ **Files v2** ([files-app](https://github.com/NeoSymbian/docs/blob/main/files-app.md) FA1–FA11, the
   phone): the new design's drive and folder screens; copy and move on a background thread with a progress bar in the
   notification shade; a Recycle bin per drive that survives power cuts and reboots; Recent, Favourites, a Types tab and
   search over a file index; Free up space (large files, old downloads, duplicates); Details; and a text and code
@@ -101,7 +101,8 @@ The first target is the **Google Pixel 3a XL**; the **Pixel 3a** (same chip) has
   file as hex; Open with, Share, and Files as the system file picker, with apps passing open files to each other
   by handle; WAV audio; and documents: Word (docx), OpenDocument (odt) and rtf in reflowed and page views, an e-book
   reader for EPUB (pages, contents, text size, themes, your place kept) and Excel (xlsx) sheets as a read-only grid,
-  in Armenian, Russian and English, with photos loaded only as you scroll to them.
+  in Armenian, Russian and English, with photos loaded only as you scroll to them; and PDFs: pages, thumbnails,
+  pinch zoom, contents, go to page and passwords, your place kept.
 - ✅ **A web browser** ([browser](https://github.com/NeoSymbian/docs/blob/main/browser.md), Servo): Servo draws
   real web pages, https included, in the Browser app on the phone (WB4). You can type into forms in English and
   Armenian, answer page dialogs, upload a file through Files, open pages in tabs, press and hold a link for its menu,
