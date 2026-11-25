@@ -115,7 +115,8 @@ The first target is the **Google Pixel 3a XL**; the **Pixel 3a** (same chip) has
 - ✅ **The 2010 user side is built for ARMv8** ([user-side-smp](https://github.com/NeoSymbian/docs/blob/main/user-side-smp.md)
   US2 + US3): every 2010 Symbian library, server and program now compiles as 32-bit ARMv8 with hardware floating point
   and SMP-safe memory barriers, instead of ARMv5. Same exports, 1 % smaller, same boot time; old S60 apps keep
-  running unchanged. Our Rust code moves next (US4).
+  running unchanged. Our Rust code followed (US4, 2026-11-25): real atomics, NEON, and the UI draws its home screen
+  2.2× faster.
 
 ## Next
 
