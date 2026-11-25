@@ -116,7 +116,8 @@ The first target is the **Google Pixel 3a XL**; the **Pixel 3a** (same chip) has
   US2 + US3): every 2010 Symbian library, server and program now compiles as 32-bit ARMv8 with hardware floating point
   and SMP-safe memory barriers, instead of ARMv5. Same exports, 1 % smaller, same boot time; old S60 apps keep
   running unchanged. Our Rust code followed (US4, 2026-11-25): real atomics, NEON, and the UI draws its home screen
-  2.2× faster.
+  2.2× faster. The ARMv5 leftovers and the old Syborg emulator build are gone (US5): CI and the phone now build
+  byte-identical system files, checked on every build.
 
 ## Next
 
