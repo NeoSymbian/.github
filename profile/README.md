@@ -4,7 +4,7 @@
 
 **Open-source Symbian for modern hardware.** NeoSymbian is a volunteer, non-commercial project building on the Symbian^3 EKA2 source released in 2010.
 
-The first target is the **Google Pixel 3a XL**; the **Pixel 3a** (same chip) has a community port too. The EKA2 kernel runs on **64-bit ARM (AArch64)**, the original 2010 Symbian user side runs in 32-bit mode, and a new touch UI written in **Rust** runs on the phone.
+The first target is the **Google Pixel 3a XL**; the **Pixel 3a** (same chip) has a community port too, and the **OnePlus 6T** (a second chip, SDM845) boots the touch UI. The EKA2 kernel runs on **64-bit ARM (AArch64)**, the original 2010 Symbian user side runs in 32-bit mode, and a new touch UI written in **Rust** runs on the phone.
 
 [Documentation](https://github.com/NeoSymbian/docs) · [Roadmap](https://github.com/NeoSymbian/docs/blob/main/roadmap.md) · [Build system](https://github.com/NeoSymbian/build) · [Kernel](https://github.com/NeoSymbian/kernel) · [Rust UI](https://github.com/NeoSymbian/neoui)
 
@@ -125,6 +125,11 @@ The first target is the **Google Pixel 3a XL**; the **Pixel 3a** (same chip) has
   byte-identical system files, checked on every build. CI tests it all on QEMU's `virt` board with our kernel (US6):
   the ARMv8 CRC, AES and SHA instructions (also on both of the phone's core clusters), the multicore checks, and the
   touch UI itself, now with a screen, touch and keys that can be watched over VNC.
+- ✅ **A second phone: the OnePlus 6T** ([fajita](https://github.com/NeoSymbian/docs/blob/main/fajita.md), OP0–OP5,
+  2026-11-26): the kernel and the Rust UI boot on Qualcomm's SDM845, from RAM (the phone keeps Ubuntu Touch). The
+  USB console, the keys, the touchscreen, CPU clocks with touch boost and the temperature sensors work. Its bootloader
+  left the USB PHY off and USB's memory access unmapped, each fixed in the new `sdm845_assp`; storage (UFS), the modem,
+  Wi-Fi and audio come next.
 
 ## Next
 
