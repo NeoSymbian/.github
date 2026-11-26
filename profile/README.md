@@ -103,6 +103,10 @@ The first target is the **Google Pixel 3a XL**; the **Pixel 3a** (same chip) has
   reader for EPUB (pages, contents, text size, themes, your place kept) and Excel (xlsx) sheets as a read-only grid,
   in Armenian, Russian and English, with photos loaded only as you scroll to them; and PDFs: pages, thumbnails,
   pinch zoom, contents, go to page and passwords, your place kept.
+- 🚧 **Video in Files** ([files-app](https://github.com/NeoSymbian/docs/blob/main/files-app.md) FA12, the phone):
+  MP4, MOV, 3GP and Matroska/WebM with H.264, VP8 and VP9 pictures and AAC, Vorbis and Opus sound, all decoded in
+  pure Rust; 720p plays at about 30 fps in portrait with seek, speed, mute, rotate and full screen. Still open:
+  sound and picture drift up to 0.1 s after key frames, landscape at 23–27 fps, and nothing over 720p yet.
 - ✅ **A web browser** ([browser](https://github.com/NeoSymbian/docs/blob/main/browser.md), Servo): Servo draws
   real web pages, https included, in the Browser app on the phone (WB4). You can type into forms in English and
   Armenian, answer page dialogs, upload a file through Files, open pages in tabs, press and hold a link for its menu,
