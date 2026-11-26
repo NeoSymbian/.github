@@ -103,6 +103,11 @@ The first target is the **Google Pixel 3a XL**; the **Pixel 3a** (same chip) has
   reader for EPUB (pages, contents, text size, themes, your place kept) and Excel (xlsx) sheets as a read-only grid,
   in Armenian, Russian and English, with photos loaded only as you scroll to them; and PDFs: pages, thumbnails,
   pinch zoom, contents, go to page and passwords, your place kept.
+- ✅ **Clock and Calendar** ([datetime](https://github.com/NeoSymbian/docs/blob/main/datetime.md), the phone):
+  a new Clock (clock with world cities, alarms, timer and stopwatch) and a Calendar (month, week, day and to-do,
+  repeating events, reminders, anniversaries and your contacts' birthdays, .ics import from Files). A resident
+  service, DTSRV, keeps every alarm, timer, event and to-do and rings them over any app, with the screen woken, a
+  tone, Snooze and Dismiss, and a card in the notification shade; they survive a restart.
 - 🚧 **Video in Files** ([files-app](https://github.com/NeoSymbian/docs/blob/main/files-app.md) FA12, the phone):
   MP4, MOV, 3GP and Matroska/WebM with H.264, VP8 and VP9 pictures and AAC, Vorbis and Opus sound, all decoded in
   pure Rust; 720p plays at about 30 fps in portrait with seek, speed, mute, rotate and full screen. Still open:
