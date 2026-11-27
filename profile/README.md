@@ -63,7 +63,7 @@ The first target is the **Google Pixel 3a XL**; the **Pixel 3a** (same chip) has
   address by DHCP and gives apps TCP and UDP sockets (W5). The driver now sleeps on the chip's interrupts instead of
   polling (W7). **Unchanged 2010 programs reach the internet through the real socket API** (W5a): the 2010 socket
   server (ESOCK) runs over NEONET with no TCPIP6, using our protocol module and an always-up connection tier.
-- ✅ **A system keyboard in three languages** ([neoui-shell](https://github.com/NeoSymbian/docs/blob/main/neoui-shell.md)):
+- ✅ **A system keyboard in three languages** ([neoui-shell](https://github.com/NeoSymbian/docs/blob/main/neoui-shell/README.md)):
   English, Armenian (phonetic) and Russian, switched with a globe key and managed in **Settings → Language &
   keyboard**. Any text field raises it, for example the Wi-Fi password. The Terminal gets an Esc, Tab and arrows row.
 - ✅ **Phone and Contacts as one Rust app** ([phone](https://github.com/NeoSymbian/phone), telephony C8): NEOPHONE
@@ -76,7 +76,7 @@ The first target is the **Google Pixel 3a XL**; the **Pixel 3a** (same chip) has
   over QMI WMS. Armenian, Cyrillic and long texts are split into parts, ✓✓ shows delivery, and messages are kept
   even while the app is closed. Conversations, threads and new messages to several people. **Reply with message**
   answers a call with busy and a text. The blocklist covers messages too.
-- ✅ **UI v2: Phone, Contacts and Messages as three apps, installed on the phone** ([phone-apps](https://github.com/NeoSymbian/docs/blob/main/phone-apps.md)):
+- ✅ **UI v2: Phone, Contacts and Messages as three apps, installed on the phone** ([phone-apps](https://github.com/NeoSymbian/docs/blob/main/apps/phone.md)):
   every app now draws its header and footer from a shared Rust kit, in the new NeoSans font (Latin and Armenian).
   Phone, Contacts and Messages are three separate programs that open each other, each with its own card in Open apps.
   Every screen of the design canvas is built and wired, including the proposals: one entry per conversation in the
@@ -89,7 +89,7 @@ The first target is the **Google Pixel 3a XL**; the **Pixel 3a** (same chip) has
   record-and-play-back test; the volume keys set the media volume outside a call. Calls and the ringtone take over
   the speaker. **Old apps get sound too**: their unmodified 2010 audio framework talks to NeoAudio through our
   adaptor, so Frozen Bubble plays its sounds. The 3.5 mm jack has a driver.
-- ✅ **Files v2** ([files-app](https://github.com/NeoSymbian/docs/blob/main/files-app.md) FA1–FA11, the
+- ✅ **Files v2** ([files-app](https://github.com/NeoSymbian/docs/blob/main/apps/files/README.md) FA1–FA11, the
   phone): the new design's drive and folder screens; copy and move on a background thread with a progress bar in the
   notification shade; a Recycle bin per drive that survives power cuts and reboots; Recent, Favourites, a Types tab and
   search over a file index; Free up space (large files, old downloads, duplicates); Details; and a text and code
@@ -103,16 +103,16 @@ The first target is the **Google Pixel 3a XL**; the **Pixel 3a** (same chip) has
   reader for EPUB (pages, contents, text size, themes, your place kept) and Excel (xlsx) sheets as a read-only grid,
   in Armenian, Russian and English, with photos loaded only as you scroll to them; and PDFs: pages, thumbnails,
   pinch zoom, contents, go to page and passwords, your place kept.
-- ✅ **Clock and Calendar** ([datetime](https://github.com/NeoSymbian/docs/blob/main/datetime.md), the phone):
+- ✅ **Clock and Calendar** ([datetime](https://github.com/NeoSymbian/docs/blob/main/apps/datetime.md), the phone):
   a new Clock (clock with world cities, alarms, timer and stopwatch) and a Calendar (month, week, day and to-do,
   repeating events, reminders, anniversaries and your contacts' birthdays, .ics import from Files). A resident
   service, DTSRV, keeps every alarm, timer, event and to-do and rings them over any app, with the screen woken, a
   tone, Snooze and Dismiss, and a card in the notification shade; they survive a restart.
-- 🚧 **Video in Files** ([files-app](https://github.com/NeoSymbian/docs/blob/main/files-app.md) FA12, the phone):
+- 🚧 **Video in Files** ([files-app](https://github.com/NeoSymbian/docs/blob/main/apps/files/README.md) FA12, the phone):
   MP4, MOV, 3GP and Matroska/WebM with H.264, VP8 and VP9 pictures and AAC, Vorbis and Opus sound, all decoded in
   pure Rust; 720p plays at about 30 fps in portrait with seek, speed, mute, rotate and full screen. Still open:
   sound and picture drift up to 0.1 s after key frames, landscape at 23–27 fps, and nothing over 720p yet.
-- ✅ **A web browser** ([browser](https://github.com/NeoSymbian/docs/blob/main/browser.md), Servo): Servo draws
+- ✅ **A web browser** ([browser](https://github.com/NeoSymbian/docs/blob/main/apps/browser/README.md), Servo): Servo draws
   real web pages, https included, in the Browser app on the phone (WB4). You can type into forms in English and
   Armenian, answer page dialogs, upload a file through Files, open pages in tabs, press and hold a link for its menu,
   find text on the page, select and copy it, and keep bookmarks, history and downloads, with scrolling at 15–18 frames
@@ -122,7 +122,7 @@ The first target is the **Google Pixel 3a XL**; the **Pixel 3a** (same chip) has
   standard library and Tokio run on the phone and fetch web pages over Wi-Fi (WB2), and Servo's JavaScript engine,
   SpiderMonkey, passes its tests on the phone: the language, garbage collection, threads and running out of memory
   cleanly (WB3).
-- ✅ **The 2010 user side is built for ARMv8** ([user-side-smp](https://github.com/NeoSymbian/docs/blob/main/user-side-smp.md)
+- ✅ **The 2010 user side is built for ARMv8** ([user-side-smp](https://github.com/NeoSymbian/docs/blob/main/user-side/user-side-smp.md)
   US2 + US3): every 2010 Symbian library, server and program now compiles as 32-bit ARMv8 with hardware floating point
   and SMP-safe memory barriers, instead of ARMv5. Same exports, 1 % smaller, same boot time; old S60 apps keep
   running unchanged. Our Rust code followed (US4, 2026-11-25): real atomics, NEON, and the UI draws its home screen
@@ -142,13 +142,13 @@ its design board, and since 2026-11-27 the data behind them is real: search over
 sizes, screen-on time since a full charge, keypad tones and your own ringtones, wallpaper colours and font size,
 notification channels with Do not disturb, the switcher and home editor, and the SIM card lock.
 
-Old Symbian apps ([legacy](https://github.com/NeoSymbian/docs/blob/main/legacy.md)): unmodified S60 `.sis` apps in
+Old Symbian apps ([legacy](https://github.com/NeoSymbian/docs/blob/main/user-side/legacy.md)): unmodified S60 `.sis` apps in
 one shared 2010 window server inside the Rust UI. The **Old apps** screen already lists the installed apps from
 Symbian's app registry, with their icons, and starts them (QEMU); next come SVG icons and getting X-plore and Frozen
 Bubble through their start-up.
 
 Sharing `E:` with a PC over USB, updates from the phone itself, and power (battery, idle, sleep)
-  ([the storage plan](https://github.com/NeoSymbian/docs/blob/main/filesystem.md)).
+  ([the storage plan](https://github.com/NeoSymbian/docs/blob/main/storage/filesystem.md)).
 
 Follow along in the [roadmap](https://github.com/NeoSymbian/docs/blob/main/roadmap.md).
 
@@ -160,7 +160,7 @@ Follow along in the [roadmap](https://github.com/NeoSymbian/docs/blob/main/roadm
 | [build](https://github.com/NeoSymbian/build) | The build system: `neo`, the build image, the pinned sources, the 2010 ROM |
 | [e32-rs](https://github.com/NeoSymbian/e32-rs), [neoui](https://github.com/NeoSymbian/neoui) | Rust on the Symbian user side, and the Rust UI server and apps |
 | [docs](https://github.com/NeoSymbian/docs) | Roadmap, Rust integration, the port map |
-| [neohw](https://github.com/NeoSymbian/neohw) | The hardware's user side in Rust (was telephony + neolink): the modem, audio, Wi-Fi and IP daemons; [hardware.md](https://github.com/NeoSymbian/docs/blob/main/hardware.md) lists every driver |
+| [neohw](https://github.com/NeoSymbian/neohw) | The hardware's user side in Rust (was telephony + neolink): the modem, audio, Wi-Fi and IP daemons; [hardware.md](https://github.com/NeoSymbian/docs/blob/main/hardware/README.md) lists every driver |
 | [files](https://github.com/NeoSymbian/files) | Files: the file manager (Rust + Slint), its file-operation engine, the file index, the text, code and table formats and the image formats |
 | [phone](https://github.com/NeoSymbian/phone) | Phone, Contacts and Messages: the NEOPHONE app (Rust + Slint), its contacts model, call and message logic |
 | [legacy](https://github.com/NeoSymbian/legacy) | Old S60 apps inside the Rust UI: LEGACY.EXE (the guest window server and the Old apps launcher), the legacy component list and `.sis` tools |
