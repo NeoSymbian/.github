@@ -137,7 +137,10 @@ Emergency calls through the modem's emergency call type.
 
 A **Settings app** of its own ([neoui-shell/settings](https://github.com/NeoSymbian/docs/blob/main/neoui-shell/settings.md#the-settings-app-neoset)): Settings
 leaves the shell for `NEOSET.EXE`, so it shows in Open apps, with every page of the Settings v2 design (Wi-Fi,
-mobile, sound profiles, display, battery, storage, apps, privacy, reset) in stages SE0–SE7.
+mobile, sound profiles, display, battery, storage, apps, privacy, reset) in stages SE0–SE7. Every page now matches
+its design board, and since 2026-11-27 the data behind them is real: search over every row and value, drive and app
+sizes, screen-on time since a full charge, keypad tones and your own ringtones, wallpaper colours and font size,
+notification channels with Do not disturb, the switcher and home editor, and the SIM card lock.
 
 Old Symbian apps ([legacy](https://github.com/NeoSymbian/docs/blob/main/legacy.md)): unmodified S60 `.sis` apps in
 one shared 2010 window server inside the Rust UI. The **Old apps** screen already lists the installed apps from
